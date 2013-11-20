@@ -1,0 +1,27 @@
+{
+  "rvm": {
+  	"gems": {
+  		"ruby-1.9.3-p327": [
+  			{
+  				"name": "passenger",
+  				"version": "3.0.21"
+  			}	
+  		]
+  	}
+  },
+  "nginx": {
+  	 "passenger": {
+            "version": "3.0.21",
+            "ruby": "/usr/local/rvm/rubies/ruby-1.9.3-p327/bin/ruby",
+            "root": "/usr/local/rvm/gems/ruby-1.9.3-p327/gems/passenger-3.0.21"
+    },
+  	"source": {
+  		"modules": ["nginx::passenger"]
+  	}
+  },
+  "run_list": [
+    "recipe[rvm::system]",
+    "recipe[nginx::source]",
+    "recipe[nginx::passenger]"
+  ]
+}

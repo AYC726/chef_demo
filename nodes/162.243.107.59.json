@@ -1,0 +1,17 @@
+{
+  "apache": {
+    "default_site_enabled": true
+  },
+  "mysql": {
+    "server_root_password": "ruby",
+    "server_repl_password": "ruby",
+    "server_debian_password": "ruby"
+  },
+  "run_list": [
+    "recipe[apache2]",
+    "recipe[apache2::mod_php5]",
+    "recipe[mysql]",
+    "recipe[mysql::server]",
+    "recipe[php]"
+  ]
+}
